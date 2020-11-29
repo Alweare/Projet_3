@@ -21,10 +21,13 @@
     }
     body
     {
+        
         font-family: Arial, Helvetica, sans-serif;
         display:flex;
         flex-direction: column;
         position: absolute;
+       
+        
     }
 
     h1 
@@ -35,7 +38,7 @@
     {
         font-size: 2em;
         text-align: center;
-        margin-right: 5%;
+        
     }
 
     #bouton_lire_la_suite
@@ -43,6 +46,18 @@
         position: absolute;
 
     }
+
+    #acteur
+    {
+        border: black solid 2px;
+        border-right: black solid 2px;
+        margin-left: 0;
+        margin-top: 5%;
+        margin-right: 3%;
+        
+    }
+
+    
     
 }
 

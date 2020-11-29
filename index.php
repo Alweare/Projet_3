@@ -6,7 +6,7 @@
 
 <html lang="fr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="style.css" />
         <title>GBAF</title>
@@ -40,54 +40,42 @@
         </section>
         <section>
 
-            <h2>acteurs et partenaire</h2> <!-- à modifier avec le vrai texte -->
+            <h2>acteurs et partenaire</h2> <!-- Titre de section -->
 
-            <article>
-                <img src="logoacteurs/CDE.png" alt="logo_CDE" class="Logo_CDE" />     <!-- changer le alt logo par logo_(nom de l'acteur )-->
-                <h3>
-                    <!-- sous titre a mettre -->
-                </h3>
-                <p>
-                    La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation.<br />
-                    Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.<br />
-                </p>
-            
+            <!-- appel de base de donnée et boucle php pour afficher les acteurs -->
+            <?php
+                $bdd = new PDO('mysql:host=localhost;dbname=gbafapp', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                $requete = $bdd->query('SELECT * FROM acteur LIMIT 0,6');
                 
-                <a href="acteur.php?id=<?php echo "ID"; ?>" id="bouton_lire_la_suite">Lire la suite</a>
-            </article>
+                while ($acteur = $requete->fetch())
+                {
+                ?>
+                    <article >
+                        <div id="acteur">
 
-            <article>
-                <img src="logoacteurs/Dsa_france.png" alt="logo_Dsa_France" class="Logo_Dsa" />
-                <h3>
-                    <!-- sous titre a mettre -->
-                </h3>
-                <p>
-                    
-                    Dsa France accélère la croissance du territoire et s’engage avec les collectivités territoriales.<br />
-                    Nous accompagnons les entreprises dans les étapes clés de leur évolution.<br />
-                    Notre philosophie : s’adapter à chaque entreprise.<br />
-                    Nous les accompagnons pour voir plus grand et plus loin et proposons des solutions de financement adaptées à chaque étape de la vie des entreprises<br />
 
-                </p>
+                            <img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur'];?> />  <!-- changer le alt logo par logo_(nom de l'acteur )-->
+                            <h3>
+                                <?php echo $acteur['acteur']; ?>   <!-- sous titre a mettre -->
+                            </h3>
+                            <p>
+                                <?php echo nl2br($acteur['description']); ?>
+                            </p>
+                        
+                            
+                            <a href="acteur.php?id=<?php echo $acteur['id_acteur']; ?>" id="bouton_lire_la_suite">Lire la suite</a>
+                        </div>
+                </article>
+                <?php     
+                }
+                 $requete->closeCursor();
+
+                 ?>
+                
             
-                <a href="acteur.php?id=<?php echo "ID"; ?>" id="bouton_lire_la_suite">Lire la suite</a>
+            
 
-            </article>
 
-            <article>
-                <img src="logoacteurs/formation_co.png" alt="logo_formation_co" class="Logo_formation" />
-                <h3>
-                    <!-- sous titre a mettre -->
-                </h3>
-                <p>
-                    Formation&co est une association française présente sur tout le territoire.<br />
-                    Nous proposons à des personnes issues de tout milieu de devenir entrepreneur grâce à un crédit et un accompagnement professionnel et personnalisé.<br />
-
-                </p>
-
-                <a href="acteur.php?id=<?php echo "ID"; ?>" id="bouton_lire_la_suite">Lire la suite</a>
-
-            </article>
         </section>
 
 
