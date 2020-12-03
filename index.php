@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 
-<html lang="fr">
+<html>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width">
@@ -44,33 +44,35 @@
 
             <!-- appel de base de donnée et boucle php pour afficher les acteurs -->
             <?php
-                $bdd = new PDO('mysql:host=localhost;dbname=gbafapp', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-                $requete = $bdd->query('SELECT * FROM acteur LIMIT 0,6');
+                include 'base.php';
+                // $requete = $bdd->query('SELECT * FROM acteur LIMIT 0,6'); limite de 6 acteurs comme sur le wireframe 
+                $requete = $bdd->query('SELECT * FROM acteur');
+                
                 
                 while ($acteur = $requete->fetch())
                 {
                 ?>
-                    <article >
+                    <article>
                         <div id="acteur">
 
 
-                            <img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur'];?> />  <!-- changer le alt logo par logo_(nom de l'acteur )-->
+                            <img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur'];?> id="logo_acteur" />  <!-- changer le alt logo par logo_(nom de l'acteur )-->
                             <h3>
                                 <?php echo $acteur['acteur']; ?>   <!-- sous titre a mettre -->
                             </h3>
                             <p>
-                                <?php echo nl2br($acteur['description']); ?>
+                                <span class="description"><?php echo nl2br($acteur['description']); ?></span>
                             </p>
                         
                             
-                            <a href="acteur.php?id=<?php echo $acteur['id_acteur']; ?>" id="bouton_lire_la_suite">Lire la suite</a>
+                            <a href="page_acteur.php?id=<?php echo $acteur['id_acteur']; ?>" id="bouton_lire_la_suite">Lire la suite</a>
                         </div>
-                </article>
+                    </article>
                 <?php     
                 }
-                 $requete->closeCursor();
+                $requete->closeCursor();
 
-                 ?>
+                ?>
                 
             
             

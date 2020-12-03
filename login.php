@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,103 +6,101 @@
         
         <title>Document</title>
     </head>
-    <body>
-            <form action="" method="POST"> 
+    <body> 
 
-                <p>
-                    <label>
-                        Nom :
+        <form action="verifconnexion.php" method="POST"> 
 
-                    <input type="text" name="username" />
-                    
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Mot de passe :
+            <p>
+                <label>
+                    Nom :
 
-                        <input type="password" name="password" />
-                    
-                    </label>
-
-                </p>
-                <p>
-                    <input type="submit" value="Envoyer">
-                </p>
-                <p>
-                    <label>
-                        Si vous n'avez pas de compte.
-
-                        <input type="submit" value="Inscription" />
-                    
-                    </label>
+                <input type="text" name="username" />
                 
-                </p>
-            </form>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Mot de passe :
+
+                    <input type="password" name="password" />
+                
+                </label>
+
+            </p>
+            <p>
+                <input type="submit" value="Envoyer">
+            </p>
+
+        </form>
+        <a href="login.php?inscription=1">S'inscrire</a>
+
 
         <?php
 
-        if(isset($_POST['Inscription']) && $_POST == true)
-        {
-            ?>
-            <form action="" method="POST">
-                <p>
+            if( isset($_GET['inscription']) && $_GET['inscription'] == 1)
+            {
+                ?>
+                <form action="verifinscription.php" method="POST">
+                    <p>
 
-                    <label>
-                        Nom :
-                        <input type="text" value="nom" />
-
-
-                    </label>
-
-                </p>
-                <p>
-                    <label>
-                        Prénom :
-                        <input type="text" value="prenom" />
-                    </label>
-                </p>
-                <p>
-                    <label>
-                        Identifiant :
-                        <input type="text" value="username" />
-                    </label>
-                </p>
-                <p>
-                    <label>
-
-                        Mot de passe : 
-                        <input type="password" value="password" />
-
-                    </label>
-                </p>
-                <p>
-                    <label>
-
-                        Question secrète : 
-                        <!-- mettre une liste déroulante pour les choix de question -->
-
-                    </label>
-                </p>
-                <p>
-                    <label>
-
-                        Réponse question secrète : 
-                        <input type="text" value="reponse" />
-                    
-                    </label>
-                </p>
+                        <label>
+                            Nom :
+                            <input type="text" name="nom" />
 
 
+                        </label>
+
+                    </p>
+                    <p>
+                        <label>
+                            Prénom :
+                            <input type="text" name="prenom" />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Identifiant :
+                            <input type="text" name="username" />
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+
+                            Mot de passe : 
+                            <input type="password" name="password" />
+
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+
+                            Question secrète : 
+                            <input type="text" name="question_secrete" />
+
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+
+                            Réponse question secrète : 
+                            <input type="text" name="reponse" />
+                        
+                        </label>
+                    </p>
+                    <p>
+
+                        <input type="submit" name="S\'inscrire" />
+ 
+                    </p>
 
 
-            </form>
-        <?php
 
-        }
+
+                </form>
+            <?php
+
+            }
         
-
-
         ?>
     </body>
 </html>
