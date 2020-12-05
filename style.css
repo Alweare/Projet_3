@@ -3,8 +3,8 @@
 
 
 /* Approche Mobile first */
-@media screen and (max-width: 640px)
-{
+@media only screen and (max-width: 640px)
+{ 
     .logo_gbaf     
     {
         position: relative;
@@ -22,13 +22,13 @@
     }
     body
     {
-        
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;  
+    }
+
+    .liste_acteur
+    {
         display:flex;
         flex-direction: column;
-        position: absolute;
-       
-        
     }
 
     h1 
@@ -70,9 +70,32 @@
     
     }
 
+    #nom_prenom
+    {
+        text-align: center;
+        border-bottom: black solid 1px;
+        border-top: black solid 1px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        max-width: 100%;
+    }
+
+
+    /* Page login */ 
+
+    .connexion
+    {
+        font-size: 1.5em;
+        text-align: justify;
+        padding-top: 200px;
+        
+    }
+
+
+
  
     
-}
+ } 
 
 
 

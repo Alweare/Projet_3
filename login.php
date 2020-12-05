@@ -3,37 +3,39 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style.css" />
         
-        <title>Document</title>
+        <title>GBAFConnect</title>
     </head>
     <body> 
+        <div class="connexion">
+            <form action="verifconnexion.php" method="POST"> 
 
-        <form action="verifconnexion.php" method="POST"> 
+                <p>
+                    <label>
+                        Identifiant  :    
 
-            <p>
-                <label>
-                    Nom :
+                    <input type="text" name="username" />
+                    
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        Mot de passe :
 
-                <input type="text" name="username" />
-                
-                </label>
-            </p>
-            <p>
-                <label>
-                    Mot de passe :
+                        <input type="password" name="password" />
+                    
+                    </label>
 
-                    <input type="password" name="password" />
-                
-                </label>
-
-            </p>
-            <p>
-                <input type="submit" value="Envoyer">
-            </p>
+                </p>
+                <p>
+                    <input type="submit" value="Envoyer">
+                </p>
 
         </form>
         <a href="login.php?inscription=1">S'inscrire</a>
-
+        </div>
 
         <?php
 
