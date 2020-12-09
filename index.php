@@ -58,7 +58,7 @@
                         ?>
                                     <article>
                                         <div id="acteur">
-
+                                    
 
                                             <img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur']; ?> id="logo_acteur" />  <!-- changer le alt logo par logo_(nom de l'acteur )-->
                                             <h3>
