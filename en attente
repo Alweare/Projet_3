@@ -1,0 +1,9 @@
+        //préparation du test pour savoir si l'id de la session à déjà un commentaire sur l'acteur. Jointure table post et account.
+        $com_utilisateur = $bdd->prepare('SELECT post.id_user AS puser, post.post, post.id_acteur AS idact, account.id_user AS accuser
+        FROM post
+        INNER JOIN account
+        WHERE id_acteur = :id_acteur AND account.id_user = :id_user');
+        $com_utilisateur->execute(array(
+            'id_acteur' => $_POST['id_acteur'], 
+            'id_user' => $_SESSION['id']));
+        $test_post = $com_utilisateur->fetch();

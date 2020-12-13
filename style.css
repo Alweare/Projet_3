@@ -5,11 +5,14 @@
 /* Approche Mobile first */
 @media only screen and (max-width: 640px)
 { 
+
+    /* Page principal */
     .logo_gbaf     
     {
         position: relative;
         text-align: center;
         margin-left: 10%;
+        
         
     } 
     #presentation  
@@ -22,13 +25,39 @@
     }
     body
     {
-        font-family: Arial, Helvetica, sans-serif;  
+        font-family: Arial, Helvetica, sans-serif;
+        
+          
+    }
+
+    #nom_prenom
+    {
+        text-align: center;
+        border-bottom: black solid 1px;
+        padding-top: 10px;
+        padding-bottom: 10px; 
+    
     }
 
     .liste_acteur
     {
         display:flex;
         flex-direction: column;
+    }
+    #acteur
+    {
+        max-width: 100%;
+        border: black solid 2px;
+        height: 10%;
+        margin-bottom: 10px;
+        padding:15px;
+        
+    }
+    #bouton_lire_la_suite
+    {
+        display: block;
+        float: right;
+
     }
 
     h1 
@@ -41,44 +70,102 @@
         text-align: center;
         
     }
-
-
-
-
-    #bouton_lire_la_suite
+    ul, li
     {
-        display: block;
-        float: right;
-
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 10px;
+      
+    }
+    footer 
+    {
+        text-align: center;
     }
 
-    #acteur
+
+    /* Page acteur */
+    #nom_prenom_pacteur
     {
-        max-width: 100%;
-        border: black solid 2px;
-        border-right: black solid 2px;
-        height: 10%;
-        margin-bottom: 10px;
-        padding:15px;
+        margin-top: 20px;
+        margin-left: 240px;
+        position: absolute;
+        vertical-align: top;
+
+
+    }
+    .header_border
+    {
         
+        border-bottom: black solid 1px;
+        margin-bottom: 20px;
     }
+    .logo_gbaf_pacteur     
+    {
+        width: 20%;
+        height:20%;
+    }
+
+
 
     #logo_acteur
     {
         max-width: 100%;
         
-    
+        
+    }
+    .bouton_retour
+    {
+        display: block;
+        text-align: right;
+        border: black solid 1px;
+        margin-left: 68%;
+        border-radius: 20px;
+       
+        
+        
+    }
+    #commentaire 
+    {
+        /* max-width: 100%; */
+        border: black solid 1px;
+        border-right: black solid 2px;
+        border-radius: 20px;
+        height: 10%;
+        margin-bottom: 10px;
+        padding:10px;
+        
+
+    }
+    .new_com
+    {
+        
+        margin-bottom: 10px;
+        padding:10px;
+    }
+    .cadre_com
+    {
+        max-width: 100%;
+        border: black solid 1px;
+        
+        padding:20px;
+        margin: 5px;
+        
+
+    }
+    .vote
+    {
+        display: inline-block;
+        padding-top: 5px;
+        padding-bottom: 15px;
+        
+        
+    }
+    .bouton_vote
+    {
+        
+        text-align: right;
     }
 
-    #nom_prenom
-    {
-        text-align: center;
-        border-bottom: black solid 1px;
-        border-top: black solid 1px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        max-width: 100%;
-    }
 
 
     /* Page login */ 
@@ -96,6 +183,10 @@
  
     
  } 
+
+
+
+
 
 
 
