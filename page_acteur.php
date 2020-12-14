@@ -36,17 +36,9 @@ if (!empty($_SESSION))
                 <?php
 
 
-                    // Test de l'id reçu en paramètre d'url et mise en variable entier 
-                    // if(!empty($_GET['id']))
-                    // {
-                    //     $idacteur = $_GET['id'];
-                    // }
-                    // else
-                    // {
-                    //     echo 'l\'acteur que vous chercher n\'existe pas';
-                    // }
 
-                            include 'base.php';
+
+                    include 'base.php';
                     // On prépare la requête pour afficher les acteurs + les commentaires. 
                     $requete = $bdd->prepare('SELECT acteur.*
                     FROM acteur
@@ -54,10 +46,14 @@ if (!empty($_SESSION))
                     $requete->execute(array($_GET['id']));
                     $acteur = $requete->fetch();
 
-
-                    $like = $bdd->prepare('SELECT * FROM vote WHERE id_acteur = ?');
+                    
+                    $like = $bdd->prepare('SELECT likes FROM vote WHERE id_acteur = ? AND likes != 0');
                     $like->execute(array($_GET['id']));
-                    $likes = $like->rowCount() == true;
+                    $likesCount = $like->rowCount();
+
+                    $dislike = $bdd->prepare('SELECT dislikes FROM vote WHERE id_acteur = ? AND dislikes != 0');
+                    $dislike->execute(array($_GET['id']));
+                    $dislikesCount = $dislike->rowCount();
 
                 ?>
 
@@ -93,11 +89,15 @@ if (!empty($_SESSION))
                 
                     <div class="bouton_vote">
 
+                        <?php echo $likesCount; ?>
+
+
                         <form action="verifvote.php" method="POST" class="vote">
                             <input type="hidden" value="1" name="like" />
                             <input type="hidden" value="<?php echo "" . $_GET['id']; ?>" name="id_acteur"/>
                             <input type="submit" value="like" class="btn_like"> 
                         </form>
+                        <?php echo $dislikesCount ?>
                         <form action="verifvote.php" method="POST" class="vote" >
                             <input type="hidden" value="1" name="dislike" />
                             <input type="hidden" value="<?php echo "" . $_GET['id']; ?>" name="id_acteur"/>
