@@ -1,19 +1,20 @@
 
-/* centrer le logo quel que soit l'écran*/
+
 
 
 /* Approche Mobile first */
-@media only screen and (max-width: 640px)
+@media screen and (max-width: 640px)
 { 
 
     /* Page principal */
-    .logo_gbaf     
+    .header_border
     {
-        position: relative;
-        text-align: center;
-        margin-left: 10%;
-        
-        
+        display: flex;
+        flex-direction: column;
+    }
+    .logo_gbaf 
+    {
+        margin-left: 10%; 
     } 
     #presentation  
     {
@@ -87,15 +88,14 @@
     #nom_prenom_pacteur
     {
         margin-top: 20px;
-        margin-left: 240px;
-        position: absolute;
-        vertical-align: top;
+    
 
 
     }
-    .header_border
+    .header_border_pacteur
     {
-        
+        display: flex;
+        justify-content: space-between;
         border-bottom: black solid 1px;
         margin-bottom: 20px;
     }
@@ -183,6 +183,145 @@
  
     
  } 
+
+ /* Style du format tablette, on met la règle média au minimum pour le max d'un écran de smartphone et au max pour celui de la plus grosse tablette*/
+ @media screen and (max-width: 1400px) and (min-width: 640px)
+ {
+     /* page liste des acteurs */
+
+    .header_border
+    {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: black solid 2px;
+        
+    }
+    .logo_gbaf 
+    {
+        width: 30%;
+        height:30%;
+        
+    }
+    #presentation  
+    {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 2em;
+        border-bottom : black solid 2px;
+           
+    } 
+    body
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        padding:15px;
+        
+        
+          
+    }
+    #nom_prenom
+    {
+        font-size: 2em;
+        margin-top: 50px; 
+    
+    }
+    .acteur_partenaire
+    {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .liste_acteur
+    {
+        padding: 20px;
+        border: black solid 2px;
+    }
+    #acteur
+    {
+        max-width: 100%;
+        max-height: 150px;
+        display: flex;
+        justify-content: space-between;
+        border: black solid 2px;
+        margin-bottom: 10px;
+        padding:5px;
+        
+
+        
+    }
+    #logo_acteur
+    {
+        
+        max-width: 40%;
+        padding: 5px;
+     
+        
+        
+        
+        
+    }
+
+    .description
+    {
+        
+     margin-left: 10px;
+        
+    }
+    #bouton_lire_la_suite
+    {
+        display:block;
+        float: right;
+        background:    #ff0000;
+        border:        1px solid #556699;
+        border-radius: 1000px;
+        box-shadow:    0 3px #444444;
+        width:         85px;
+        height:        21px;
+        color:         #ffffff;
+        font:          normal bold 11px/21px "Noto Sans", sans-serif;
+        text-align:    center;
+       
+
+    }
+    a:link 
+    { 
+     text-decoration:none;
+     color: white; 
+    }
+    a:visited{
+        color: white;
+   }  
+   
+
+   .bouton_retour
+   {
+    background:    #ff0000;
+    border-radius: 11px;
+    box-shadow:    1px 1px #444444;
+    width:         112px;
+    height:        20px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal bold 14px/20px "Noto Sans", sans-serif;
+    text-align:    center;
+   }
+   footer 
+   {
+       background: black;
+       max-width: 100%;
+       text-align: center;
+       margin-top: 10px;
+   }
+   ul, li
+   {
+       list-style-type: none;
+       display: inline-block;
+       margin-right: 10px;
+     
+   }
+
+ } 
+
 
 
 

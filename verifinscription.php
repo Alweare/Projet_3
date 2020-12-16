@@ -22,17 +22,17 @@ if(empty($_SESSION))
 
 
 
-            if($resultat['username'] !== $username)
-            {
-                $inscription = $bdd->prepare('INSERT INTO account(nom, prenom, username, password, question, reponse) VALUES(:nom, :prenom, :username, :password, :question, :reponse)');
-                $inscription->execute(array(
-                    'nom' => $nom,
-                    'prenom' => $prenom,
-                    'username' => $username,
-                    'password' => $pass_hache,
-                    'question' => $question,
-                    'reponse' => $reponse));
-            }
+        if($resultat['username'] !== $username)
+        {
+            $inscription = $bdd->prepare('INSERT INTO account(nom, prenom, username, password, question, reponse) VALUES(:nom, :prenom, :username, :password, :question, :reponse)');
+            $inscription->execute(array(
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'username' => $username,
+            'password' => $pass_hache,
+            'question' => $question,
+            'reponse' => $reponse));
+        }
         
     }
 }

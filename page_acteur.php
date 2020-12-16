@@ -14,7 +14,8 @@ if (!empty($_SESSION))
         <body>
 
             <header>
-                <div class="header_border">
+                <div class="header_border_pacteur">
+                    <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf_pacteur"/>
                     <div id="nom_prenom_pacteur">
                             
                             <?php 
@@ -24,7 +25,7 @@ if (!empty($_SESSION))
                     </div>
 
                     
-                    <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf_pacteur"/>
+                    
                 </div>
                 <!-- Logo GBAF miniature haut gauche + avatar nom prénom à droite. On récup avec la session en php -->
 
@@ -137,9 +138,10 @@ if (!empty($_SESSION))
                         
                         <p>  
                             <form action="verifpost.php" method="POST" class="new_com">
-                            <label>
-                                <input type="text" name="nouveau_commentaire" />
-                            </label>
+                            
+                                
+                            <textarea  name="nouveau_commentaire">Ecrivez votre commentaire</textarea>
+                            
 
                             
                             <input type="hidden" name="id_acteur" value="<?php echo "" .$_GET['id'] ; ?>" />

@@ -20,16 +20,19 @@
             <body>
                 <!-- En-tête de la page -->
                 <header>   
-                    <p>
-                        <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf"/>
-                    </p> 
+                <div class="header_border">
+                    <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf"/>
                     <div id="nom_prenom">
-                    
-                        <?php 
-                            echo $_SESSION['nom'] . ' - '. $_SESSION['prenom'];
-                             
-                        ?>
+                            
+                            <?php 
+                                echo $_SESSION['prenom'] . ' - '. $_SESSION['nom'];
+                                
+                            ?>
                     </div>
+
+                    
+                    
+                </div>
                     
                 </header>
                 <!-- section présentation -->
@@ -43,9 +46,10 @@
 
 
                 </section>
-                <section class="liste_acteur">
-
-                    <h2>acteurs et partenaire</h2> <!-- Titre de section -->
+                <section >
+                    <span class="acteur_partenaire"><h2>acteurs et partenaire</h2></span> <!-- Titre de section -->
+                    <div class="liste_acteur">
+                    
 
                     <!-- appel de base de donnée et boucle php pour afficher les acteurs -->
                     <?php
@@ -59,23 +63,33 @@
                                     <article>
                                         <div id="acteur">
                                     
-
+                                            
                                             <img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur']; ?> id="logo_acteur" />  <!-- changer le alt logo par logo_(nom de l'acteur )-->
-                                            <h3>
-                                                <?php echo $acteur['acteur']; ?>   <!-- sous titre a mettre -->
-                                            </h3>
-                                            <p>
-                                                <span class="description"><?php echo nl2br($acteur['description']); ?></span>
-                                            </p>
+    
+                                            <div class="description"> 
+                                                <h3>
+                                                    <?php echo $acteur['acteur']; ?>   <!-- sous titre a mettre -->
+                                                </h3>   
+                                                <?php if(strlen($acteur['description']) >= 200)
+                                                {
+                                                    echo nl2br(substr($acteur['description'],0,190)) . '...';
+                                                }
+                                                else
+                                                {
+                                                    echo nl2br($acteur['description']);
+                                                }
+                                                      ?>
+                                                <button id="bouton_lire_la_suite"><a href="page_acteur.php?id=<?php echo $acteur['id_acteur']; ?>" >Lire la suite</a></button>
+                                            </div>
                                         
                                             
-                                            <a href="page_acteur.php?id=<?php echo $acteur['id_acteur']; ?>" id="bouton_lire_la_suite">Lire la suite</a>
+                                            
                                         </div>
                                     </article>
                                 <?php
                     }
                     $requete->closeCursor(); ?>
-                        
+                    </div> 
                     
                     
 
