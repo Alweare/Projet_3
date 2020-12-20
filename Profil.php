@@ -7,6 +7,7 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/95794a4896.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style.css" />
         <title>Profile</title>
     </head>
@@ -30,6 +31,7 @@ session_start();
                 
             </div>
         </header>
+        <section>
         <?php
         include 'base.php';
         $profil = $bdd->prepare('SELECT nom, prenom, username, password, question, reponse FROM account WHERE id_user = ?');
@@ -38,7 +40,7 @@ session_start();
         ?>
        <div class="info">
         <p>
-                Nom :</br> <?php echo $donnees['nom'];?>   <a href="profil.php?modif=1">Modifier</a>
+                Nom :</br> <?php echo $donnees['nom'];?>   <a href="profil.php?modif=1"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && $modif == 1) {
@@ -60,7 +62,7 @@ session_start();
 
             </p>
             <p>
-                Prenom :</br> <?php echo $donnees['prenom'];?>  <button class="btn_modif"><a href="profil.php?modif=2">Modifier</a></button>
+                Prenom :</br> <?php echo $donnees['prenom'];?>  <a href="profil.php?modif=2"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 2) {
@@ -79,7 +81,7 @@ session_start();
 
             </p>
             <p>
-                Username : </br><?php echo $donnees['username'];?>  <a href="profil.php?modif=3">Modifier</a>
+                Username : </br><?php echo $donnees['username'];?>  <a href="profil.php?modif=3"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 3) 
@@ -101,7 +103,7 @@ session_start();
 
             </p>
             <p>
-                Mot de passe : </br> ****** <a href="profil.php?modif=6">Modifier</a>
+                Mot de passe : </br> ****** <a href="profil.php?modif=6"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 6) 
@@ -124,7 +126,7 @@ session_start();
             </p>
 
             <p>
-                Question secrète : </br><?php echo $donnees['question'];?> <a href="profil.php?modif=4">Modifier</a>
+                Question secrète : </br><?php echo $donnees['question'];?> <a href="profil.php?modif=4"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 4) 
@@ -147,7 +149,7 @@ session_start();
 
             </p>
             <p>
-                Réponse secrète : </br><?php echo $donnees['reponse'];?>  <a href="profil.php?modif=5">Modifier</a>
+                Réponse secrète : </br><?php echo $donnees['reponse'];?>  <a href="profil.php?modif=5"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 5) 
@@ -169,8 +171,13 @@ session_start();
 
             </p>
        </div>
-
+        </section>
    
     </body>
+    <footer>
+        <?php
+            include '_footer.php'
+        ?>
+    </footer>
 
 </html>
