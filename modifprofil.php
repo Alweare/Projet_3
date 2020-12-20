@@ -10,7 +10,7 @@ if (isset($_POST['modif']) && !empty($_POST['modif']) && !empty($_POST['indice']
 }
 else
 {
-    echo 'problème sauterelle démontée';
+    header("Location: " . $_SERVER["HTTP_REFERER"]);
 }
     switch ($indice) 
     {
@@ -57,6 +57,7 @@ else
     
     
 }
+
 
 
 if (isset($_SERVER["HTTP_REFERER"])) { 

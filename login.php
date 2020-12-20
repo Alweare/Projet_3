@@ -9,6 +9,11 @@
         <title>GBAFConnect</title>
     </head>
     <body> 
+        <header>
+            <div class="header_border">
+                <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf"/>  
+            </div>
+        </header>
         <div class="connexion">
             <form action="verifconnexion.php" method="POST"> 
 
@@ -33,8 +38,8 @@
                     <input type="submit" value="Envoyer">
                 </p>
 
-        </form>
-        <a href="login.php?inscription=1">S'inscrire</a>
+            </form>
+            <a href="login.php?inscription=1" class="btn_inscrire">S'inscrire</a>
         </div>
 
         <?php
@@ -42,7 +47,7 @@
             if( isset($_GET['inscription']) && $_GET['inscription'] == 1)
             {
                 ?>
-                <form action="verifinscription.php" method="POST">
+                <form action="verifinscription.php" method="POST" class="inscription">
                     <p>
 
                         <label>

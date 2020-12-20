@@ -22,12 +22,16 @@
                 <header>   
                 <div class="header_border">
                     <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf"/>
+                    
                     <div id="nom_prenom">
-                            
+                    <a href="profil.php?modif=0"><img src="images/user.png" alt="profil_icone" class="profil_ic" /></a>
+                    
                             <?php 
-                                echo $_SESSION['prenom'] . ' - '. $_SESSION['nom'];
+                                
+                                echo  $_SESSION['prenom'] . ' - '. $_SESSION['nom'];
                                 
                             ?>
+                    <a href="deconnexion.php"><img src="images/logout.png" alt="profil_icone" class="profil_ic" /></a>
                     </div>
 
                     
@@ -36,10 +40,15 @@
                     
                 </header>
                 <!-- section présentation -->
-                <section id="presentation">  
+                <section>  
                     
-                    <h1>Banque humaine</h1> <!-- à modifier avec le vrai texte -->
-
+                    <h1>Groupement Banque-Assurance Français</h1> <!-- à modifier avec le vrai texte -->
+                    <div id="presentation">
+                        <p>
+                        Le GBAF est le représentant de la profession bancaire et des assureurs sur tous
+                        les axes de la réglementation financière française.
+                        </p> 
+                    </div>   
                     <p>
                         <img src="" alt="Bannière gbaf" class="banniere" />
                     </p>
@@ -98,21 +107,18 @@
 
 
             </body>
+        <footer>
+          <?php
+          include '_footer.php';
+          
+          ?>
+        </footer>
 
-            <footer>
-                
-                <ul>
-                    <li>
-                        <a href="#">Mentions légales</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-                    
-                    
-            </footer>
     </html>
 <?php
   }
-  ?>
+  if(empty($_SESSION))
+  {
+      include 'login.php';
+  }
+?>

@@ -18,10 +18,14 @@ if (!empty($_SESSION))
                     <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf_pacteur"/>
                     <div id="nom_prenom_pacteur">
                             
-                            <?php 
-                                echo $_SESSION['prenom'] . ' - '. $_SESSION['nom'];
-                                
-                            ?>
+                        <img src="images/user.png" alt="profil_icone" class="profil_ic" />
+                        
+                        <?php 
+                            
+                            echo  $_SESSION['prenom'] . ' - '. $_SESSION['nom'];
+                            
+                        ?>
+                        <img src="images/logout.png" alt="profil_icone" class="profil_ic" />
                     </div>
 
                     
@@ -63,7 +67,7 @@ if (!empty($_SESSION))
 
                 
 
-                <img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur']; ?> id="logo_acteur" />
+                <img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur']; ?> id="logo_acteur_pacteur" />
                 <!-- lien de retour sur la liste des acteurs -->
                 <a href="index.php" class="bouton_retour">Retour à la liste</a>
                 <!-- Nom de l'acteur en h2 -->

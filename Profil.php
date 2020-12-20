@@ -7,9 +7,29 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
         <title>Profile</title>
     </head>
     <body>
+        <header>   
+            <div class="header_border_pacteur">
+                <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf_pacteur"/>
+                
+                <div id="nom_prenom_pacteur">
+                <a href="profil.php?modif=0"><img src="images/user.png" alt="profil_icone" class="profil_ic" /></a>
+                
+                        <?php 
+                            
+                            echo  $_SESSION['prenom'] . ' - '. $_SESSION['nom'];
+                            
+                        ?>
+                <a href="deconnexion.php"><img src="images/logout.png" alt="profil_icone" class="profil_ic" /></a>
+                </div>
+
+                
+                
+            </div>
+        </header>
         <?php
         include 'base.php';
         $profil = $bdd->prepare('SELECT nom, prenom, username, password, question, reponse FROM account WHERE id_user = ?');
@@ -18,7 +38,7 @@ session_start();
         ?>
        <div class="info">
         <p>
-                Nom : <?php echo $donnees['nom'];?>   <a href="profil.php?modif=1">Modifier</a>
+                Nom :</br> <?php echo $donnees['nom'];?>   <a href="profil.php?modif=1">Modifier</a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && $modif == 1) {
@@ -30,6 +50,7 @@ session_start();
                     </label>
                     <input type="hidden" value="1" name="indice" />
                     <input type="submit" name="Valider" />
+                    <button><a href="profil?modif=0">Annuler</a></button>
                 </form>
                 <?php
                 }
@@ -39,7 +60,7 @@ session_start();
 
             </p>
             <p>
-                Prenom : <?php echo $donnees['prenom'];?>  <a href="profil.php?modif=2">Modifier</a>
+                Prenom :</br> <?php echo $donnees['prenom'];?>  <button class="btn_modif"><a href="profil.php?modif=2">Modifier</a></button>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 2) {
@@ -47,7 +68,7 @@ session_start();
                 <form action="modifprofil.php" method="POST">
                     <label>
                         Prénom :
-                        <input type="text" name="modif_prenom" />
+                        <input type="text" name="modif_prenom" /> 
                     </label>
                     <input type="hidden" value="2" name="indice"/>
                     <input type="submit" name="Valider" />
@@ -58,7 +79,7 @@ session_start();
 
             </p>
             <p>
-                Username : <?php echo $donnees['username'];?>  <a href="profil.php?modif=3">Modifier</a>
+                Username : </br><?php echo $donnees['username'];?>  <a href="profil.php?modif=3">Modifier</a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 3) 
@@ -80,7 +101,7 @@ session_start();
 
             </p>
             <p>
-                Mot de passe : ****** <a href="profil.php?modif=6">Modifier</a>
+                Mot de passe : </br> ****** <a href="profil.php?modif=6">Modifier</a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 6) 
@@ -103,7 +124,7 @@ session_start();
             </p>
 
             <p>
-                Question secrète : <?php echo $donnees['question'];?> <a href="profil.php?modif=4">Modifier</a>
+                Question secrète : </br><?php echo $donnees['question'];?> <a href="profil.php?modif=4">Modifier</a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 4) 
@@ -126,7 +147,7 @@ session_start();
 
             </p>
             <p>
-                Réponse secrète : <?php echo $donnees['reponse'];?>  <a href="profil.php?modif=5">Modifier</a>
+                Réponse secrète : </br><?php echo $donnees['reponse'];?>  <a href="profil.php?modif=5">Modifier</a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 5) 
@@ -148,6 +169,8 @@ session_start();
 
             </p>
        </div>
+
    
     </body>
+
 </html>
