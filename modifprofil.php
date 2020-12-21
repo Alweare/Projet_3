@@ -49,10 +49,18 @@ else
         case 5:
             $modif = htmlspecialchars($_POST['modif_reponse']);
             $reponse_modif = $bdd->prepare('UPDATE account SET reponse = :reponse WHERE id_user = :id_user');
+            $reponse_modif->execute(array(
+                'reponse' => $modif,
+                'id_user' => $_SESSION['id']));
         break;
 
         case 6:
+            $modif = password_hash($_POST['modif_password'], PASSWORD_DEFAULT);
             $password_modif = $bdd->prepare('UPDATE account SET password = :password WHERE id_user = :id_user');
+            $password_modif->execute(array(
+                'password' => $modif,
+                'id_user' => $_SESSION['id']));
+
         break;
     
     

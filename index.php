@@ -49,9 +49,9 @@
                         les axes de la réglementation financière française.
                         </p> 
                     </div>   
-                    <p>
-                        <img src="" alt="Bannière gbaf" class="banniere" />
-                    </p>
+                    <div class="banniere">
+                        <img src="images/bannière.jpg" alt="Bannière gbaf"  />
+                    </div>
 
 
                 </section>

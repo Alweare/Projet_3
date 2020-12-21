@@ -27,6 +27,17 @@
         font-size: 1em;
            
     }
+    .banniere img 
+    {
+        width: 80%;
+        height: 80%;
+        
+
+    }
+    .banniere
+    {
+        text-align: center;
+    }
     body
     {
         font-family: Arial, Helvetica, sans-serif;
@@ -331,6 +342,17 @@
         border-bottom : black solid 2px;
            
     } 
+    .banniere img 
+    {
+        width: 50%;
+        height: 50%;
+        
+
+    }
+    .banniere
+    {
+        text-align: center;
+    }
     body
     {
         font-family: Arial, Helvetica, sans-serif;
@@ -521,7 +543,7 @@
           font-size: 1.5em;
           text-align: justify;
           padding-top: 200px;
-          color: #ffffff;
+          color: #000000;
          
           
       }
@@ -546,7 +568,7 @@
       .btn_inscrire
       {
           margin-top: 20px;
-          background: #e5e6e9;
+          background: #000000;
           border-radius: 11px;
           padding:       10px 35px;
           color:         #ffffff;
@@ -590,6 +612,18 @@
         height:10%;
         
     }
+    .banniere img 
+    {
+        width: 40%;
+        height: 40%;
+        
+
+    }
+    .banniere
+    {
+        text-align: center;
+    }
+    
     #presentation  
     {
         
@@ -808,13 +842,14 @@
             font-size: 1.5em;
             text-align: justify;
             padding-top: 200px;
-            color: #ffffff;
+            color: #000000;
             
             
         }
         .connexion form
         {
-
+            margin-left: 20%;
+            max-width: 50%;
             height: 200px;
             background: #e5e6e9;
             text-align: center;
@@ -830,13 +865,13 @@
             border-radius: 61px 61px 61px 61px;
             margin-top: 10%;
         }
-        .btn_inscrire
+        .btn_inscrire 
         {
+            margin-left: 20%;
             margin-top: 20px;
-            background: #e5e6e9;
+            background: #000000;
             border-radius: 11px;
             padding:       10px 35px;
-            color:         #ffffff;
             display:       inline-block;
             font:          normal bold 26px/1 "Open Sans", sans-serif;
             text-align:    center;
