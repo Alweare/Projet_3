@@ -262,7 +262,7 @@
     .connexion form
     {
 
-        height: 200px;
+        height: 220px;
         background: #e5e6e9;
         text-align: center;
         padding-top: 30px;
@@ -292,7 +292,12 @@
         font: normal bold 26px/1 "Open Sans", sans-serif;
         text-align: center;
     }
-
+    .mdp_oublie, .mdp_oublie a
+    {
+        color: red;
+        font-size: 12px;
+        
+    }
 /* page profil*/
     .info
     {
@@ -550,7 +555,7 @@
       .connexion form
       {
   
-          height: 200px;
+          height: 210px;
           background: #e5e6e9;
           text-align: center;
           padding-top: 30px;
@@ -576,7 +581,12 @@
           font:          normal bold 26px/1 "Open Sans", sans-serif;
           text-align:    center;
       }
-  
+      .mdp_oublie, .mdp_oublie a
+      {
+          color: red;
+          font-size: 16px;
+          
+      }
    /* page profil*/
    .info
    {
@@ -850,7 +860,7 @@
         {
             margin-left: 20%;
             max-width: 50%;
-            height: 200px;
+            height: 210px;
             background: #e5e6e9;
             text-align: center;
             padding-top: 30px;
@@ -875,6 +885,12 @@
             display:       inline-block;
             font:          normal bold 26px/1 "Open Sans", sans-serif;
             text-align:    center;
+        }
+        .mdp_oublie, .mdp_oublie a
+        {
+            color: red;
+            font-size: 16px;
+            padding: 8px;
         }
 
     /* page profil*/

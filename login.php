@@ -38,6 +38,8 @@
                     <input type="submit" value="Envoyer">
                 </p>
 
+                <span class="mdp_oublie">Vous avez oubliez votre mot de passe ?<a href="mot_de_passe_oublie.php" >Mot de passe oublié</a></span>
+
             </form>
             <a href="login.php?inscription=1" class="btn_inscrire">S'inscrire</a>
         </div>

@@ -16,7 +16,7 @@
             </div>
         </header>
         <div class="connexion">
-            <form action="reponse.php" method="POST"> 
+            <form action="test/reponse.php" method="POST"> 
 
                 <p>
                     <label>

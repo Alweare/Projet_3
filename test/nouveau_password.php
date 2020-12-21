@@ -3,20 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../style.css" />
         
         <title>GBAFConnect</title>
     </head>
     <body> 
         <header>
             <div class="header_border">
-                <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf"/>  
+                <img src="../images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf"/>  
             </div>
         </header>
         <?php
 
         if (!empty($_POST['username'])) {
-            include 'base.php';
+            include '../base.php';
             $username = htmlspecialchars($_POST['username']);
             $bdd = $bdd->prepare('SELECT question, reponse FROM account WHERE username = ?');
             $bdd->execute(array($username));
@@ -28,7 +28,7 @@
                 
                 ?>
                 <div class="connexion">
-                    <form action="test/insert_mdp.php" method="POST"> 
+                    <form action="insert_mdp.php" method="POST"> 
 
                         
                         <?php echo $username; ?>
