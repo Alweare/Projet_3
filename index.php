@@ -56,63 +56,67 @@
 
                 </section>
                 <section >
-                    <span class="acteur_partenaire"><h2>acteurs et partenaire</h2></span> <!-- Titre de section -->
+                    <div class="acteur_partenaire"><h2>acteurs et partenaire</h2></div> <!-- Titre de section -->
                     <div class="liste_acteur">
                     
 
-                    <!-- appel de base de donnée et boucle php pour afficher les acteurs -->
-                    <?php
-                        include 'base.php';
-                    // $requete = $bdd->query('SELECT * FROM acteur LIMIT 0,6'); limite de 6 acteurs comme sur le wireframe
-                    $requete = $bdd->query('SELECT * FROM acteur');
-                                
-                                
-                    while ($acteur = $requete->fetch()) {
-                        ?>
-                                    <article>
-                                        <div id="acteur">
+                        <!-- appel de base de donnée et boucle php pour afficher les acteurs -->
+                        <?php
+                            include 'base.php';
+                        // $requete = $bdd->query('SELECT * FROM acteur LIMIT 0,6'); limite de 6 acteurs comme sur le wireframe
+                        $requete = $bdd->query('SELECT * FROM acteur');
                                     
-                                            
-                                            <img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur']; ?> id="logo_acteur" />  <!-- changer le alt logo par logo_(nom de l'acteur )-->
-    
-                                            <div class="description"> 
-                                                <h3>
-                                                    <?php echo $acteur['acteur']; ?>   <!-- sous titre a mettre -->
-                                                </h3>   
-                                                <?php if(strlen($acteur['description']) >= 200)
-                                                {
-                                                    echo nl2br(substr($acteur['description'],0,190)) . '...';
-                                                }
-                                                else
-                                                {
-                                                    echo nl2br($acteur['description']);
-                                                }
-                                                      ?>
-                                                <button id="bouton_lire_la_suite"><a href="page_acteur.php?id=<?php echo $acteur['id_acteur']; ?>" >Lire la suite</a></button>
-                                            </div>
+                                    
+                        while ($acteur = $requete->fetch()) 
+                        {
+                            ?>
+                                <article>
+                                    <div class="acteur">
+                                
                                         
-                                            
-                                            
+                                        <img src="logoacteurs/<?php echo $acteur['logo']; ?>" alt=logo_acteur class="logo_acteur" />  <!-- changer le alt logo par logo_(nom de l'acteur )-->
+
+                                        <div class="description"> 
+                                            <h3>
+                                                <?php echo $acteur['acteur']; ?>   <!-- sous titre a mettre -->
+                                            </h3>   
+                                            <?php if(strlen($acteur['description']) >= 200)
+                                            {
+                                                echo nl2br(substr($acteur['description'],0,190)) . '...';
+                                            }
+                                            else
+                                            {
+                                                echo nl2br($acteur['description']);
+                                            }
+                                                    ?>
+                                            <a href="page_acteur.php?id=<?php echo $acteur['id_acteur']; ?>" class="bouton_lire_la_suite" >Lire la suite</a>
                                         </div>
-                                    </article>
-                                <?php
-                    }
-                    $requete->closeCursor(); ?>
+                                    
+                                        
+                                        
+                                    </div>
+                                </article>
+                            <?php
+                        }
+                        $requete->closeCursor(); ?>
                     </div> 
                     
                     
 
 
                 </section>
+                <footer>
+
+                    <?php
+
+                    include '_footer.php';
+
+                    ?>
+                </footer>
 
 
             </body>
-        <footer>
-          <?php
-          include '_footer.php';
-          
-          ?>
-        </footer>
+
 
     </html>
 <?php

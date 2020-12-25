@@ -18,16 +18,16 @@ if (!empty($_SESSION))
                 <div class="header_border_pacteur">
                     <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf_pacteur"/>
 
-                    <div id="nom_prenom_pacteur">
+                    <div class="nom_prenom_pacteur">
 
-                    <a href="profil.php?modif=0"><img src="images/user.png" alt="profil_icone" class="profil_ic" /></a>
-                    
-                            <?php 
-                                
-                                echo  $_SESSION['prenom'] . ' - '. $_SESSION['nom'];
-                                
-                            ?>
-                    <a href="deconnexion.php"><img src="images/logout.png" alt="profil_icone" class="profil_ic" /></a>
+                        <a href="profil.php?modif=0"><img src="images/user.png" alt="profil_icone" class="profil_ic" /></a>
+                        
+                                <?php 
+                                    
+                                    echo  $_SESSION['prenom'] . ' - '. $_SESSION['nom'];
+                                    
+                                ?>
+                        <a href="deconnexion.php"><img src="images/logout.png" alt="profil_icone" class="profil_ic" /></a>
                     </div>
 
                     
@@ -40,7 +40,7 @@ if (!empty($_SESSION))
             </header>
             <!-- Section acteur -->
             <section>
-                <div class="corps_page_acteur">
+            <div class="corps_page_acteur">
                     <?php
 
 
@@ -76,7 +76,7 @@ if (!empty($_SESSION))
 
                     
 
-                    <div class="logopacteur"><img src="logoacteurs/<?php echo $acteur['logo']; ?>" <?php echo 'alt=logo de ' . $acteur['acteur']; ?> id="logo_acteur_pacteur" /></div>
+                    <div class="logopacteur"><img src="logoacteurs/<?php echo $acteur['logo']; ?>" alt="logo_acteur"  class="logo_acteur_pacteur"/></div>
                     <!-- lien de retour sur la liste des acteurs -->
                     <a href="index.php" class="bouton_retour">Retour à la liste</a>
                     <!-- Nom de l'acteur en h2 -->
@@ -96,7 +96,7 @@ if (!empty($_SESSION))
                 
                 ?>
                 </section>
-                <section class="commentaire">
+                <section>
 
                     <article class="cadre_com">
                 
@@ -105,38 +105,18 @@ if (!empty($_SESSION))
                         <div class="bouton_vote">
                             
 
-                            <div class="new_com" onclick="javascript:montrer_spoiler('spoiler2')">
+                           
 
-                            <button class="new_com" style="color:black">
-                            commentaire
+                            <button class="new_com" onclick="javascript:montrer_spoiler('spoiler2')">
+                            Nouveau commentaire
                             </button>
 
                             <script type="text/javascript">
-                            function montrer_spoiler(value){var actual=document.getElementById(value).style.visibility;
-                            if (actual=='visible'){document.getElementById(value).style.visibility='hidden';}
-                            else{document.getElementById(value).style.visibility='visible';
+                            function montrer_spoiler(value){var actual=document.getElementById(value).style.display;
+                            if (actual=='block'){document.getElementById(value).style.display='none';}
+                            else{document.getElementById(value).style.display='block';
                             }}
                             </script>
-                            <dl style="visibility: hidden;" id="spoiler2">
-                                <p>  
-                                    <form action="verifpost.php" method="POST" class="new_com">
-                                    
-                                        
-                                    <textarea  name="nouveau_commentaire">Ecrivez votre commentaire</textarea>
-                                    
-
-                                    
-                                    <input type="hidden" name="id_acteur" value="<?php echo "" .$_GET['id'] ; ?>" />
-                                    
-                                    <input type="submit"  value="Envoyer" />
-
-                                    </form>
-                                </p>
-                            </dl>
-                            </div>
-                            
-                            
-
                             
                                 <form action="verifvote.php" method="POST" class="vote">
                                 
@@ -152,6 +132,22 @@ if (!empty($_SESSION))
                                 <input type="hidden" value="<?php echo "" . $_GET['id']; ?>" name="id_acteur"/>
                                 <button type="submit" class="btn_dislike"><?php echo $dislikesCount .' ' ;?><i class="far fa-thumbs-down"></i></button>
                             </form>
+                            <div id="spoiler2">
+                                 
+                                <form action="verifpost.php" method="POST" class="new_com">
+                                
+                                    
+                                <textarea  name="nouveau_commentaire">Ecrivez votre commentaire</textarea>
+                                
+
+                                
+                                <input type="hidden" name="id_acteur" value="<?php echo "" .$_GET['id'] ; ?>" />
+                                
+                                <input type="submit"  value="Envoyer" />
+
+                                </form>
+                            
+                            </div>
                             
 
                         </div>
@@ -169,13 +165,13 @@ if (!empty($_SESSION))
                     
                         ?>
                         
-                            <div id="commentaire">
+                            <div class="commentaire">
                                 
 
                                 
 
-                                <?php echo  $commentaire['date_add'] . 'par :'. $profil['prenom'] . '</br>' ;?> 
-                                <?php echo $commentaire['post'] . '</br>' ;?>
+                                <?php echo  $commentaire['date_add'] . 'par :'. $profil['prenom'] . '<br>' ;?> 
+                                <?php echo $commentaire['post'] . '<br>' ;?>
                                 
                                 
                             </div>
@@ -192,9 +188,10 @@ if (!empty($_SESSION))
                         
                     
 
-                    
+                </div>  
                 </section>
-            </div>
+            
+            
             <footer>
                 <?php
                     include '_footer.php'

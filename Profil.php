@@ -16,7 +16,7 @@ session_start();
             <div class="header_border_pacteur">
                 <img src="images/logo_gbaf.png" alt="Logo GBAF" class="logo_gbaf_pacteur"/>
                 
-                <div id="nom_prenom_pacteur">
+                <div class="nom_prenom_pacteur">
                 <a href="profil.php?modif=0"><img src="images/user.png" alt="profil_icone" class="profil_ic" /></a>
                 
                         <?php 
@@ -40,7 +40,7 @@ session_start();
         ?>
        <div class="info">
         <p>
-                Nom :</br> <?php echo $donnees['nom'];?>   <a href="profil.php?modif=1"><i class="fas fa-pencil-alt"></i></a>
+                Nom :<br> <?php echo $donnees['nom'];?>   <a href="profil.php?modif=1"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && $modif == 1) {
@@ -62,7 +62,7 @@ session_start();
 
             </p>
             <p>
-                Prenom :</br> <?php echo $donnees['prenom'];?>  <a href="profil.php?modif=2"><i class="fas fa-pencil-alt"></i></a>
+                Prenom :<br> <?php echo $donnees['prenom'];?>  <a href="profil.php?modif=2"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 2) {
@@ -81,7 +81,7 @@ session_start();
 
             </p>
             <p>
-                Username : </br><?php echo $donnees['username'];?>  <a href="profil.php?modif=3"><i class="fas fa-pencil-alt"></i></a>
+                Username : <br><?php echo $donnees['username'];?>  <a href="profil.php?modif=3"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 3) 
@@ -103,7 +103,7 @@ session_start();
 
             </p>
             <p>
-                Mot de passe : </br> ****** <a href="profil.php?modif=6"><i class="fas fa-pencil-alt"></i></a>
+                Mot de passe : <br> ****** <a href="profil.php?modif=6"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 6) 
@@ -126,7 +126,7 @@ session_start();
             </p>
 
             <p>
-                Question secrète : </br><?php echo $donnees['question'];?> <a href="profil.php?modif=4"><i class="fas fa-pencil-alt"></i></a>
+                Question secrète : <br><?php echo $donnees['question'];?> <a href="profil.php?modif=4"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 4) 
@@ -149,7 +149,7 @@ session_start();
 
             </p>
             <p>
-                Réponse secrète : </br><?php echo $donnees['reponse'];?>  <a href="profil.php?modif=5"><i class="fas fa-pencil-alt"></i></a>
+                Réponse secrète : <br><?php echo $donnees['reponse'];?>  <a href="profil.php?modif=5"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
                 if (isset($modif) && !empty($modif) && is_int($modif) && $modif == 5) 
@@ -172,12 +172,13 @@ session_start();
             </p>
        </div>
         </section>
+        <footer>
+            <?php
+                include '_footer.php'
+            ?>
+        </footer>
    
     </body>
-    <footer>
-        <?php
-            include '_footer.php'
-        ?>
-    </footer>
+
 
 </html>

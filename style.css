@@ -75,7 +75,7 @@
         display:flex;
         flex-direction: column;
     }
-    #acteur
+    .acteur
     {
         max-width: 100%;
         border: black solid 2px;
@@ -84,7 +84,7 @@
         padding:15px;
         background: #e5e6e9;
     }
-    #logo_acteur
+    .logo_acteur
     {
         max-width:100%;
     }
@@ -126,7 +126,7 @@
     {
         color: white;
     } 
-   #bouton_lire_la_suite
+   .bouton_lire_la_suite
    {
        display:block;
        float: right;
@@ -141,7 +141,7 @@
 
 
     /* Page acteur */
-    #nom_prenom_pacteur
+    .nom_prenom_pacteur
     {
         margin-top: 20px;
         text-align: right;
@@ -162,7 +162,7 @@
 
 
 
-    #logo_acteur_pacteur
+    .logo_acteur_pacteur
     {
         max-width: 100%;
            
@@ -180,7 +180,7 @@
      text-align:    center;
     }
 
-    #commentaire 
+    .commentaire 
     {
         /* max-width: 100%; */
         border: black solid 1px;
@@ -197,6 +197,8 @@
         
         margin-bottom: 10px;
         padding:10px;
+        font-size: 12px;
+        color: black;
     }
     .cadre_com
     {
@@ -218,8 +220,11 @@
     }
     .bouton_vote
     {
-        display: flex;
-        justify-content: right; 
+        text-align: right;
+    }
+    #spoiler2
+    {
+        display: none;
     }
     .bouton_vote button 
     {
@@ -372,7 +377,7 @@
         width: 5%;
         height:auto;
     }
-    #nom_prenom, #nom_prenom_pacteur
+    #nom_prenom, .nom_prenom_pacteur
     {
         font-size: 2em;
         margin-top: 50px; 
@@ -394,7 +399,7 @@
         padding: 20px;
         border: black solid 2px;
     }
-    #acteur
+    .acteur
     {
         max-width: 100%;
         max-height: 150px;
@@ -407,7 +412,7 @@
 
         
     }
-    #logo_acteur
+    .logo_acteur
     {
         
         max-width: 40%;
@@ -422,7 +427,7 @@
      margin-left: 10px;
         
     }
-    #bouton_lire_la_suite
+    .bouton_lire_la_suite
     {
         display:block;
         float: right;
@@ -448,7 +453,7 @@
    }  
    
 /* page acteur*/ 
-    #logo_acteur_pacteur
+    .logo_acteur_pacteur
     {
         width: 100%;
     }
@@ -471,7 +476,7 @@
     text-align:    center;
    }
 
-   #commentaire 
+   .commentaire 
    {
        
        border: black solid 1px;
@@ -487,6 +492,7 @@
        width:80px;
        margin-bottom: 10px;
        padding:2px;
+       color: black;
    }
    .cadre_com
    {
@@ -508,9 +514,11 @@
    }
    .bouton_vote
    {
-       display: flex;
-       justify-content: right;
-       
+       text-align: right;
+   }
+   #spoiler2
+   {
+       display: none;
    }
    form .btn_like 
    {
@@ -655,7 +663,7 @@
         width: 2%;
         height:auto;
     }
-    #nom_prenom, #nom_prenom_pacteur
+    #nom_prenom, .nom_prenom_pacteur
     {
         font-size: 2em;
         margin-top: 50px; 
@@ -685,7 +693,7 @@
         
         
     }
-    #acteur
+    .acteur
     {
         
         max-width: 100%;
@@ -699,18 +707,16 @@
 
         
     }
-    #logo_acteur
+    .logo_acteur
     {
         
         max-width: 20%;
         padding: 5px;
-
-        
-        
+      
     }
 
  
-    #bouton_lire_la_suite
+    .bouton_lire_la_suite
     {
        
         display: block;
@@ -750,13 +756,15 @@
     }
     .corps_page_acteur
     {
-        padding: 20px 5% 5% 5%;
+        padding: 1% 5% 5% 5%;
+        margin: 0 15% 0 15%;
     }
    
     .bouton_retour
     {
     background:    #ff0000;
-    border-radius: 11px;
+    border-radius: 12px 12px 12px;
+    padding: 2px;
     box-shadow:    1px 1px #444444;
     width:         112px;
     height:        20px;
@@ -766,17 +774,14 @@
     font:          normal bold 14px/20px "Noto Sans", sans-serif;
     text-align:    center;
     }
-    .description
+
+   .description
+   {
+       width: 100%;
+   }
+    .commentaire 
     {
-        width:100%;
-    }
-    .commentaire
-    {
-        margin-left: 20%;
-        margin-right: 20%;
-    }
-    #commentaire 
-    {
+        
         
         border: black solid 1px;
         border-right: black solid 2px;
@@ -792,6 +797,8 @@
         
         margin-bottom: 10px;
         padding:2px;
+        color: black;
+        
     }
     .cadre_com
     {
@@ -799,7 +806,7 @@
         border: black solid 1px;
         border-radius: 12px 12px 12px;
         padding:20px;
-        margin: 5px;
+        margin: 0 20% 0 20%;
         
 
     }
@@ -813,10 +820,11 @@
     }
     .bouton_vote
     {
-        display: flex;
-        justify-content: right;
-        
         text-align: right;
+    }
+    #spoiler2
+    {
+        display: none;
     }
     .btn_like, .btn_dislike
     {
@@ -858,8 +866,8 @@
         }
         .connexion form
         {
-            margin-left: 20%;
-            max-width: 50%;
+            margin: 0 25% 0 25%;
+            max-width: 40%;
             height: 210px;
             background: #e5e6e9;
             text-align: center;
@@ -869,28 +877,33 @@
         .inscription
         {
             height: 300px;
+            max-width: 40%;
+            margin: 0 25% 0 25%;
             background: #e5e6e9;
             text-align: center;
             padding-top: 30px;
             border-radius: 61px 61px 61px 61px;
-            margin-top: 10%;
+            
         }
         .btn_inscrire 
         {
-            margin-left: 20%;
-            margin-top: 20px;
+            margin: 1% 25% 1% 26%;
             background: #000000;
-            border-radius: 11px;
+            border-radius: 61px 61px 61px 61px;
             padding:       10px 35px;
             display:       inline-block;
             font:          normal bold 26px/1 "Open Sans", sans-serif;
             text-align:    center;
         }
-        .mdp_oublie, .mdp_oublie a
+        .mdp_oublie 
         {
-            color: red;
+            
             font-size: 16px;
             padding: 8px;
+        }
+        .mdp_oublie a
+        {
+            color: red;
         }
 
     /* page profil*/
