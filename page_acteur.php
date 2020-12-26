@@ -155,7 +155,7 @@ if (!empty($_SESSION))
 
                     <?php
                     //récupération des commentaires
-                    $requete = $bdd->prepare('SELECT * FROM post WHERE id_acteur =?');
+                    $requete = $bdd->prepare('SELECT id_post,id_user,id_acteur,DATE_FORMAT(date_add, \'%d/%m/%Y à %Hh%imin\') AS date_creation_fr, post FROM post WHERE id_acteur =?');
                     $requete->execute(array($_GET['id']));
                     
                     while ($commentaire = $requete->fetch()) 
@@ -172,7 +172,7 @@ if (!empty($_SESSION))
 
                                 
 
-                                <?php echo  $commentaire['date_add'] . 'par :'. $profil['prenom'] . '<br>' ;?> 
+                                <?php echo  $commentaire['date_creation_fr'] . ' par :'. $profil['prenom'] . '<br>' ;?> 
                                 <?php echo $commentaire['post'] . '<br>' ;?>
                                 
                                 
