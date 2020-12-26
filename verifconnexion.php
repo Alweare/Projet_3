@@ -17,16 +17,19 @@ if (isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['use
 
     if (!$resultat) {
         echo 'Mauvais identifiant ou mot de passe !';
-    } else {
-        if ($isPasswordCorrect) {
-            session_start();
-            $_SESSION['id'] = $resultat['id_user'];
-            $_SESSION['pseudo'] = $pseudo;
-            $_SESSION['nom'] = $resultat['nom'];
-            $_SESSION['prenom'] = $resultat['prenom'];
-            echo 'Vous êtes connecté !';
-            header('location:index.php');
-        } else {
+    } else 
+        {
+            if ($isPasswordCorrect) {
+                session_start();
+                $_SESSION['id'] = $resultat['id_user'];
+                $_SESSION['pseudo'] = $pseudo;
+                $_SESSION['nom'] = $resultat['nom'];
+                $_SESSION['prenom'] = $resultat['prenom'];
+                echo 'Vous êtes connecté !';
+                header('location:index.php');
+        } 
+        else 
+        {
             echo 'Mauvais identifiant ou mot de passe ! ';
         }
     }

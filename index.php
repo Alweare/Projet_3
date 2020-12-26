@@ -118,11 +118,11 @@
             </body>
 
 
-    </html>
-<?php
-  }
-  if(empty($_SESSION))
-  {
-      include 'login.php';
-  }
+        </html>
+    <?php
+    }
+    if(empty($_SESSION))
+    {
+        include 'login.php';
+    }
 ?>
