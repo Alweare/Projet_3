@@ -53,7 +53,7 @@
             }
             else
             {
-                echo 'Problème';
+                echo 'Erreur <a href="../login.php" class="bouton_retour">Réessayez</a>';
             }
         }
       ?>  

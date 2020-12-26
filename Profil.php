@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (!empty($_SESSION)) 
+{
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +32,7 @@ session_start();
                 
                 
             </div>
+            <a href="index.php" class="bouton_retour">Retour</a>
         </header>
         <section>
         <?php
@@ -39,7 +42,7 @@ session_start();
         $donnees = $profil->fetch();
         ?>
        <div class="info">
-        <p>
+            <p>
                 Nom :<br> <?php echo $donnees['nom'];?>   <a href="profil.php?modif=1"><i class="fas fa-pencil-alt"></i></a>
                 <?php 
                 $modif = intval($_GET['modif']);
@@ -52,7 +55,7 @@ session_start();
                     </label>
                     <input type="hidden" value="1" name="indice" />
                     <input type="submit" name="Valider" />
-                    <button><a href="profil?modif=0">Annuler</a></button>
+                    
                 </form>
                 <?php
                 }
@@ -171,6 +174,7 @@ session_start();
 
             </p>
        </div>
+       
         </section>
         <footer>
             <?php
@@ -182,3 +186,10 @@ session_start();
 
 
 </html>
+<?php
+}
+else
+{
+     header('location:login.php');
+}
+?>

@@ -33,8 +33,14 @@ if(empty($_SESSION))
             'question' => $question,
             'reponse' => $reponse));
         }
+        else
+        {
+            echo 'Username déjà utilisé';
+        }
         
     }
 }
+header('location:login.php');
+
 
 ?>

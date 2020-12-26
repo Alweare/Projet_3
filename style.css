@@ -200,6 +200,7 @@
         font-size: 12px;
         color: black;
     }
+
     .cadre_com
     {
         max-width: 100%;
@@ -286,22 +287,23 @@
     .btn_inscrire 
     {
         display: block;
-        float: center;
         margin-top: 20px;
         background: #000000;
         border-radius: 11px;
         padding:    10px 35px;
         color:  #000000;
-        display: block;
-        float: center;
         font: normal bold 26px/1 "Open Sans", sans-serif;
         text-align: center;
     }
-    .mdp_oublie, .mdp_oublie a
+    .mdp_oublie
     {
-        color: red;
+        
         font-size: 12px;
         
+    }
+    .mdp_oublie a
+    {
+        color: red;
     }
 /* page profil*/
     .info
@@ -589,11 +591,15 @@
           font:          normal bold 26px/1 "Open Sans", sans-serif;
           text-align:    center;
       }
-      .mdp_oublie, .mdp_oublie a
+      .mdp_oublie
       {
-          color: red;
+          
           font-size: 16px;
           
+      }
+      .mdp_oublie a
+      {
+          color: red;
       }
    /* page profil*/
    .info
@@ -728,7 +734,7 @@
         width:         105px;
         height:        21px;
         color:         #ffffff;
-        font:          normal bold 14/21px "Noto Sans", sans-serif;
+        font:          normal bold 14px /21px "Noto Sans", sans-serif;
         text-align:    center;
         
 
