@@ -7,29 +7,20 @@ if (!empty($_POST['username'])) {
     $bdd->execute(array($username));
     $test = $bdd->fetch();
 
-    if (!empty($username) && !empty($_POST['password'])) 
-    {
+    if (!empty($username) && !empty($_POST['password'])) {
         include '../base.php';
         $modif = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $password_modif = $bdd->prepare('UPDATE account SET password = :password WHERE id_user = :id_user');
         $password_modif->execute(array(
-        'password' => $modif,
-        'id_user' => $test['id_user']));
+            'password' => $modif,
+            'id_user' => $test['id_user']
+        ));
 
         echo 'Mot de passe correctement modifié <a href="../login.php">Se connecter</a>';
-    }
-    else
-    {
+    } else {
         echo 'Erreur';
     }
-}
-else
-{
+} else {
     echo 'Erreur';
 }
-
-
-
-
-
 ?>
