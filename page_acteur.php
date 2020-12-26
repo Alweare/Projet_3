@@ -79,7 +79,6 @@ if (!empty($_SESSION)) {
                 <?php echo $com_count . ' Commentaires '; ?>
                 <div class="bouton_vote">
                     <?php include 'bouton_nouveau_commentaire.js'; ?>
-
                     <button class="new_com" onclick="javascript:montrer_spoiler('spoiler2')">
                         Nouveau commentaire
                     </button>

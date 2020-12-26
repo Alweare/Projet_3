@@ -74,7 +74,7 @@ if (isset($_POST['id_acteur'], ($_POST['dislike'])) && !empty($_POST['id_acteur'
     if (!empty($information_vote['id_user']) && $information_vote['likes'] == 1) {
         $delete = $bdd->prepare('DELETE FROM vote WHERE id_user = ? AND id_acteur = ? AND likes = 1');
         $delete = $delete->execute(array($id_utilisateur, $id_acteur));
-
+        //On insert un diskike après avoir supprimé le like. Pour éviter de pouvoir like et dislike en même temps.
         $insert = $bdd->prepare('INSERT INTO vote(id_user,id_acteur,dislikes) VALUES (:id_user, :id_acteur, :dislikes)');
         $insert = $insert->execute(array(
             'id_user' => $id_utilisateur,
