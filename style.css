@@ -1,331 +1,693 @@
-
-
-
-
 /* Approche Mobile first */
-@media screen and (max-width: 640px)
-{ 
+@media screen and (max-width: 640px) {
+	/* Page principal */
+	.header_border {
+		display: flex;
+		flex-direction: column;
+	}
+	.logo_gbaf {
+		height: auto;
+		width: 70%;
+		margin-left: 15%;
+	}
+	#presentation {
+		display: flex;
+		flex-direction: column;
+		font-size: 1em;
+	}
+	.banniere img {
+		width: 80%;
+		height: 80%;
+	}
+	.banniere {
+		text-align: center;
+	}
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		margin-bottom: 20px;
+	}
+	.profil_ic {
+		width: 5%;
+		height: auto;
+		margin-right: 6px;
+		margin-left: 6px;
+	}
 
-    /* Page principal */
-    .header_border
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    .logo_gbaf 
-    {
-        margin-left: 10%; 
-    } 
-    #presentation  
-    {
-        
-        display: flex;
-        flex-direction: column;
-        font-size: 2em;
-           
-    }
-    body
-    {
-        font-family: Arial, Helvetica, sans-serif;
-        
-          
-    }
+	#nom_prenom {
+		height: 10px;
+		text-align: center;
+		border-bottom: black solid 1px;
+		padding: 20px;
+	}
 
-    #nom_prenom
-    {
-        text-align: center;
-        border-bottom: black solid 1px;
-        padding-top: 10px;
-        padding-bottom: 10px; 
-    
-    }
+	.liste_acteur {
+		display: flex;
+		flex-direction: column;
+	}
+	.acteur {
+		max-width: 100%;
+		border: black solid 2px;
+		height: 10%;
+		margin-bottom: 10px;
+		padding: 15px;
+		background: #e5e6e9;
+	}
+	.logo_acteur {
+		max-width: 100%;
+	}
 
-    .liste_acteur
-    {
-        display:flex;
-        flex-direction: column;
-    }
-    #acteur
-    {
-        max-width: 100%;
-        border: black solid 2px;
-        height: 10%;
-        margin-bottom: 10px;
-        padding:15px;
-        
-    }
-    #bouton_lire_la_suite
-    {
-        display: block;
-        float: right;
+	h1 {
+		text-align: center;
+		font-size: 1.5em;
+	}
+	h2 {
+		font-size: 2em;
+		text-align: center;
+	}
+	ul,
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin-right: 10px;
+	}
+	footer {
+		position: relative;
+		bottom: 0;
+		width: 100%;
+		text-align: center;
+		background: #000000;
+	}
+	a:link {
+		text-decoration: none;
+		color: white;
+	}
+	a:visited {
+		color: white;
+	}
+	.bouton_lire_la_suite {
+		display: block;
+		float: right;
+		background: #ff0000;
+		border-radius: 1000px;
+		width: 85px;
+		height: 21px;
+		color: #ffffff;
+		font: normal bold 11px/21px "Noto Sans", sans-serif;
+		text-align: center;
+	}
 
-    }
+	/* Page acteur */
+	.nom_prenom_pacteur {
+		margin-top: 20px;
+		text-align: right;
+	}
+	.header_border_pacteur {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: black solid 1px;
+		margin-bottom: 20px;
+	}
+	.logo_gbaf_pacteur {
+		width: 20%;
+		height: 20%;
+	}
 
-    h1 
-    {
-        margin-left: 25%;
-    }
-    h2 
-    {
-        font-size: 2em;
-        text-align: center;
-        
-    }
-    ul, li
-    {
-        list-style-type: none;
-        display: inline-block;
-        margin-right: 10px;
-      
-    }
-    footer 
-    {
-        text-align: center;
-    }
+	.logo_acteur_pacteur {
+		max-width: 100%;
+	}
+	.bouton_retour {
+		background: #ff0000;
+		border-radius: 11px;
+		width: 112px;
+		height: 20px;
+		color: #ffffff;
+		display: block;
+		float: right;
+		font: normal bold 14px/20px "Noto Sans", sans-serif;
+		text-align: center;
+	}
 
+	.commentaire {
+		/* max-width: 100%; */
+		border: black solid 1px;
+		border-right: black solid 2px;
+		border-radius: 20px;
+		height: 10%;
+		margin-bottom: 10px;
+		padding: 10px;
+	}
+	.new_com {
+		margin-bottom: 10px;
+		padding: 10px;
+		font-size: 12px;
+		color: black;
+	}
 
-    /* Page acteur */
-    #nom_prenom_pacteur
-    {
-        margin-top: 20px;
-    
+	.cadre_com {
+		max-width: 100%;
+		border: black solid 1px;
+		border-radius: 12px 12px 12px;
+		padding: 20px;
+		margin: 5px;
+	}
+	.vote {
+		display: inline-block;
+		padding-top: 5px;
+		padding-bottom: 15px;
+	}
+	.bouton_vote {
+		text-align: right;
+	}
+	#spoiler2 {
+		display: none;
+	}
+	.bouton_vote button {
+		padding-bottom: 3px;
+	}
+	form .btn_like {
+		border: none;
+		background: transparent;
+	}
+	form .btn_dislike {
+		border: none;
+		background: transparent;
+	}
+	.new_com {
+		width: 80px;
+		padding: 5px 4px 5px 4px;
+	}
 
+	/* Page login */
 
-    }
-    .header_border_pacteur
-    {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: black solid 1px;
-        margin-bottom: 20px;
-    }
-    .logo_gbaf_pacteur     
-    {
-        width: 20%;
-        height:20%;
-    }
+	.connexion {
+		padding-top: 30px;
+		font-size: 1.5em;
+		text-align: justify;
+		padding-top: 200px;
+		color: #000000;
+	}
+	.connexion form {
+		height: 220px;
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+		margin-top: -30%;
+	}
+	.inscription {
+		height: 300px;
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+		margin-top: 15%;
+	}
+	.btn_inscrire {
+		display: block;
+		margin-top: 20px;
+		background: #000000;
+		border-radius: 11px;
+		padding: 10px 35px;
+		color: #000000;
+		font: normal bold 26px/1 "Open Sans", sans-serif;
+		text-align: center;
+	}
+	.mdp_oublie {
+		font-size: 12px;
+	}
+	.mdp_oublie a {
+		color: red;
+	}
+	/* page profil*/
+	.info {
+		height: 400px;
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+		margin-top: 20%;
+		margin-bottom: 50%;
+	}
+	.fas fa-pencil-alt,
+	.fa-pencil-alt::before {
+		color: black;
+	}
+}
 
+/* Style du format tablette, on met la règle média au minimum pour le max d'un écran de smartphone et au max pour celui de la plus grosse tablette*/
+@media screen and (max-width: 1400px) and (min-width: 640px) {
+	/* page liste des acteurs */
 
+	.header_border,
+	.header_border_pacteur {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: black solid 2px;
+	}
+	.logo_gbaf,
+	.logo_gbaf_pacteur {
+		width: 30%;
+		height: 30%;
+	}
+	#presentation {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		font-size: 1.5em;
+		border-bottom: black solid 2px;
+	}
+	.banniere img {
+		width: 50%;
+		height: 50%;
+	}
+	.banniere {
+		text-align: center;
+	}
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+		padding: 15px;
+	}
+	.profil_ic {
+		width: 5%;
+		height: auto;
+	}
+	#nom_prenom,
+	.nom_prenom_pacteur {
+		font-size: 2em;
+		margin-top: 50px;
+		text-align: right;
+	}
+	h1 {
+		text-align: center;
+		font-size: 2em;
+	}
+	.acteur_partenaire {
+		text-align: center;
+		font-size: 1.5em;
+	}
+	.liste_acteur {
+		padding: 20px;
+		border: black solid 2px;
+	}
+	.acteur {
+		max-width: 100%;
+		max-height: 150px;
+		display: flex;
+		justify-content: space-between;
+		border: black solid 2px;
+		margin-bottom: 10px;
+		padding: 5px;
+	}
+	.logo_acteur {
+		max-width: 40%;
+		padding: 5px;
+	}
 
-    #logo_acteur
-    {
-        max-width: 100%;
-        
-        
-    }
-    .bouton_retour
-    {
-        display: block;
-        text-align: right;
-        border: black solid 1px;
-        margin-left: 68%;
-        border-radius: 20px;
-       
-        
-        
-    }
-    #commentaire 
-    {
-        /* max-width: 100%; */
-        border: black solid 1px;
-        border-right: black solid 2px;
-        border-radius: 20px;
-        height: 10%;
-        margin-bottom: 10px;
-        padding:10px;
-        
+	.description {
+		margin-left: 10px;
+	}
+	.bouton_lire_la_suite {
+		display: block;
+		float: right;
+		background: #ff0000;
+		border: 1px solid #556699;
+		border-radius: 1000px;
+		box-shadow: 0 3px #444444;
+		width: 85px;
+		height: 21px;
+		color: #ffffff;
+		font: normal bold 11px/21px "Noto Sans", sans-serif;
+		text-align: center;
+	}
+	a:link {
+		text-decoration: none;
+		color: white;
+	}
+	a:visited {
+		color: white;
+	}
 
-    }
-    .new_com
-    {
-        
-        margin-bottom: 10px;
-        padding:10px;
-    }
-    .cadre_com
-    {
-        max-width: 100%;
-        border: black solid 1px;
-        
-        padding:20px;
-        margin: 5px;
-        
+	/* page acteur*/
+	.logo_acteur_pacteur {
+		width: 100%;
+	}
 
-    }
-    .vote
-    {
-        display: inline-block;
-        padding-top: 5px;
-        padding-bottom: 15px;
-        
-        
-    }
-    .bouton_vote
-    {
-        
-        text-align: right;
-    }
+	.description_acteur {
+		font-size: 1.6em;
+	}
+	.bouton_retour {
+		background: #ff0000;
+		border-radius: 11px;
+		box-shadow: 1px 1px #444444;
+		width: 112px;
+		height: 20px;
+		color: #ffffff;
+		display: block;
+		float: right;
+		font: normal bold 14px/20px "Noto Sans", sans-serif;
+		text-align: center;
+	}
 
+	.commentaire {
+		border: black solid 1px;
+		border-right: black solid 2px;
+		border-radius: 20px;
+		height: 10%;
+		margin-bottom: 10px;
+		padding: 10px;
+	}
+	.new_com {
+		width: 80px;
+		margin-bottom: 10px;
+		padding: 2px;
+		color: black;
+	}
+	.cadre_com {
+		max-width: 100%;
+		border: black solid 1px;
+		border-radius: 12px 12px 12px;
+		padding: 20px;
+		margin: 5px;
+	}
+	.vote {
+		display: inline-block;
+		padding-top: 5px;
+		padding-bottom: 15px;
+	}
+	.bouton_vote {
+		text-align: right;
+	}
+	#spoiler2 {
+		display: none;
+	}
+	form .btn_like {
+		border: none;
+		background: transparent;
+	}
+	form .btn_dislike {
+		border: none;
+		background: transparent;
+	}
+	footer {
+		background: black;
+		max-width: 100%;
+		text-align: center;
+		margin-top: 10px;
+	}
+	ul,
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin-right: 10px;
+	}
 
+	/* Page login */
 
-    /* Page login */ 
+	.connexion {
+		padding-top: 30px;
+		font-size: 1.5em;
+		text-align: justify;
+		padding-top: 200px;
+		color: #000000;
+	}
+	.connexion form {
+		height: 210px;
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+	}
+	.inscription {
+		height: 300px;
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+		margin-top: 10%;
+	}
+	.btn_inscrire {
+		margin-top: 20px;
+		background: #000000;
+		border-radius: 11px;
+		padding: 10px 35px;
+		color: #ffffff;
+		display: inline-block;
+		font: normal bold 26px/1 "Open Sans", sans-serif;
+		text-align: center;
+	}
+	.mdp_oublie {
+		font-size: 16px;
+	}
+	.mdp_oublie a {
+		color: red;
+	}
+	/* page profil*/
+	.info {
+		height: 400px;
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+		margin-top: 20%;
+		margin-bottom: 20%;
+	}
+	.fas fa-pencil-alt,
+	.fa-pencil-alt::before {
+		color: black;
+	}
+}
+@media screen and (min-width: 1400px) {
+	/* page liste des acteurs */
 
-    .connexion
-    {
-        font-size: 1.5em;
-        text-align: justify;
-        padding-top: 200px;
-        
-    }
+	.header_border,
+	.header_border_pacteur {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: black solid 2px;
+	}
+	.logo_gbaf,
+	.logo_gbaf_pacteur {
+		width: 10%;
+		height: 10%;
+	}
+	.banniere img {
+		width: 40%;
+		height: 40%;
+	}
+	.banniere {
+		text-align: center;
+	}
 
+	#presentation {
+		text-align: center;
+		font-size: 1.5em;
+		border-bottom: black solid 2px;
+	}
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	.profil_ic {
+		width: 2%;
+		height: auto;
+	}
+	#nom_prenom,
+	.nom_prenom_pacteur {
+		font-size: 2em;
+		margin-top: 50px;
+		text-align: right;
+	}
+	h1 {
+		text-align: center;
+		font-size: 2em;
+	}
+	.acteur_partenaire {
+		text-align: center;
+		font-size: 1.5em;
+	}
+	.liste_acteur {
+		max-width: 60%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 5%;
+		padding: 15px;
+		border: black solid 2px;
+		margin-left: 20%;
+	}
+	.acteur {
+		max-width: 100%;
+		max-height: 150px;
+		display: flex;
+		justify-content: left;
+		border: black solid 2px;
+		margin-bottom: 10px;
+		padding: 5px;
+	}
+	.logo_acteur {
+		max-width: 20%;
+		padding: 5px;
+	}
 
+	.bouton_lire_la_suite {
+		display: block;
+		float: right;
+		background: #ff0000;
+		border: 1px solid #556699;
+		border-radius: 1000px;
+		box-shadow: 0 3px #444444;
+		width: 105px;
+		height: 21px;
+		color: #ffffff;
+		font: normal bold 14px /21px "Noto Sans", sans-serif;
+		text-align: center;
+	}
+	a:link {
+		text-decoration: none;
+		color: white;
+	}
+	a:visited {
+		color: white;
+	}
 
- 
-    
- } 
+	/* page acteur*/
+	#logo_acteur_pacteur {
+		max-width: 40%;
+	}
+	.logopacteur {
+		text-align: center;
+	}
+	.corps_page_acteur {
+		padding: 1% 5% 5% 5%;
+		margin: 0 15% 0 15%;
+	}
 
- /* Style du format tablette, on met la règle média au minimum pour le max d'un écran de smartphone et au max pour celui de la plus grosse tablette*/
- @media screen and (max-width: 1400px) and (min-width: 640px)
- {
-     /* page liste des acteurs */
+	.bouton_retour {
+		background: #ff0000;
+		border-radius: 12px 12px 12px;
+		padding: 2px;
+		box-shadow: 1px 1px #444444;
+		width: 112px;
+		height: 20px;
+		color: #ffffff;
+		display: block;
+		float: right;
+		font: normal bold 14px/20px "Noto Sans", sans-serif;
+		text-align: center;
+	}
 
-    .header_border
-    {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: black solid 2px;
-        
-    }
-    .logo_gbaf 
-    {
-        width: 30%;
-        height:30%;
-        
-    }
-    #presentation  
-    {
-        
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 2em;
-        border-bottom : black solid 2px;
-           
-    } 
-    body
-    {
-        font-family: Arial, Helvetica, sans-serif;
-        padding:15px;
-        
-        
-          
-    }
-    #nom_prenom
-    {
-        font-size: 2em;
-        margin-top: 50px; 
-    
-    }
-    .acteur_partenaire
-    {
-        text-align: center;
-        font-size: 1.5em;
-    }
-    .liste_acteur
-    {
-        padding: 20px;
-        border: black solid 2px;
-    }
-    #acteur
-    {
-        max-width: 100%;
-        max-height: 150px;
-        display: flex;
-        justify-content: space-between;
-        border: black solid 2px;
-        margin-bottom: 10px;
-        padding:5px;
-        
+	.description {
+		width: 100%;
+	}
+	.commentaire {
+		border: black solid 1px;
+		border-right: black solid 2px;
+		border-radius: 20px;
+		height: 10%;
+		margin-bottom: 10px;
+		padding: 10px;
+	}
+	.new_com {
+		margin-bottom: 10px;
+		padding: 2px;
+		color: black;
+	}
+	.cadre_com {
+		max-width: 100%;
+		border: black solid 1px;
+		border-radius: 12px 12px 12px;
+		padding: 20px;
+		margin: 0 20% 0 20%;
+	}
+	.vote {
+		display: inline-block;
+		padding-top: 5px;
+		padding-bottom: 15px;
+	}
+	.bouton_vote {
+		text-align: right;
+	}
+	#spoiler2 {
+		display: none;
+	}
+	.btn_like,
+	.btn_dislike {
+		border: none;
+		background: none;
+	}
+	textarea {
+		width: 1019px;
+		height: 62px;
+	}
+	footer {
+		background: black;
+		max-width: 100%;
+		text-align: center;
+		margin-top: 10px;
+	}
+	ul,
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin-right: 10px;
+	}
 
-        
-    }
-    #logo_acteur
-    {
-        
-        max-width: 40%;
-        padding: 5px;
-     
-        
-        
-        
-        
-    }
+	/* Page login */
 
-    .description
-    {
-        
-     margin-left: 10px;
-        
-    }
-    #bouton_lire_la_suite
-    {
-        display:block;
-        float: right;
-        background:    #ff0000;
-        border:        1px solid #556699;
-        border-radius: 1000px;
-        box-shadow:    0 3px #444444;
-        width:         85px;
-        height:        21px;
-        color:         #ffffff;
-        font:          normal bold 11px/21px "Noto Sans", sans-serif;
-        text-align:    center;
-       
+	.connexion {
+		padding-top: 30px;
+		font-size: 1.5em;
+		text-align: justify;
+		padding-top: 200px;
+		color: #000000;
+	}
+	.connexion form {
+		margin: 0 25% 0 25%;
+		max-width: 40%;
+		height: 210px;
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+	}
+	.inscription {
+		height: 300px;
+		max-width: 40%;
+		margin: 0 25% 0 25%;
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+	}
+	.btn_inscrire {
+		margin: 1% 25% 1% 26%;
+		background: #000000;
+		border-radius: 61px 61px 61px 61px;
+		padding: 10px 35px;
+		display: inline-block;
+		font: normal bold 26px/1 "Open Sans", sans-serif;
+		text-align: center;
+	}
+	.mdp_oublie {
+		font-size: 16px;
+		padding: 8px;
+	}
+	.mdp_oublie a {
+		color: red;
+	}
 
-    }
-    a:link 
-    { 
-     text-decoration:none;
-     color: white; 
-    }
-    a:visited{
-        color: white;
-   }  
-   
+	/* page profil*/
+	.info {
+		height: 400px;
+		max-width: 50%;
 
-   .bouton_retour
-   {
-    background:    #ff0000;
-    border-radius: 11px;
-    box-shadow:    1px 1px #444444;
-    width:         112px;
-    height:        20px;
-    color:         #ffffff;
-    display:       inline-block;
-    font:          normal bold 14px/20px "Noto Sans", sans-serif;
-    text-align:    center;
-   }
-   footer 
-   {
-       background: black;
-       max-width: 100%;
-       text-align: center;
-       margin-top: 10px;
-   }
-   ul, li
-   {
-       list-style-type: none;
-       display: inline-block;
-       margin-right: 10px;
-     
-   }
-
- } 
-
-
-
-
-
-
-
-
+		background: #e5e6e9;
+		text-align: center;
+		padding-top: 30px;
+		border-radius: 61px 61px 61px 61px;
+		margin: 10% 25% 15% auto;
+	}
+	.fas fa-pencil-alt,
+	.fa-pencil-alt::before {
+		color: black;
+	}
+}
