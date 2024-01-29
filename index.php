@@ -61,7 +61,7 @@ if (!empty($_SESSION)) {
                         <div class="acteur">
 
 
-                            <img src="logoacteurs/<?php echo $acteur['logo']; ?>" alt=logo_acteur class="logo_acteur" /> <!-- changer le alt logo par logo_(nom de l'acteur )-->
+                            <img src="LogoActeurs/<?php echo $acteur['logo']; ?>" alt=logo_acteur class="logo_acteur" /> <!-- changer le alt logo par logo_(nom de l'acteur )-->
 
                             <div class="description">
                                 <h3>

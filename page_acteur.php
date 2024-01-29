@@ -59,7 +59,7 @@ if (!empty($_SESSION)) {
                 $commentaire->execute(array($_GET['id']));
                 $com_count = $commentaire->rowCount();
                 ?>
-                <div class="logopacteur"><img src="logoacteurs/<?php echo $acteur['logo']; ?>" alt="logo_acteur" class="logo_acteur_pacteur" /></div>
+                <div class="logopacteur"><img src="LogoActeurs/<?php echo $acteur['logo']; ?>" alt="logo_acteur" class="logo_acteur_pacteur" /></div>
                 <!-- lien de retour sur la liste des acteurs -->
                 <a href="index.php" class="bouton_retour">Retour</a>
                 <!-- Nom de l'acteur en h2 -->

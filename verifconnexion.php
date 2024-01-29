@@ -22,8 +22,11 @@ if (isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['use
             $_SESSION['pseudo'] = $pseudo;
             $_SESSION['nom'] = $resultat['nom'];
             $_SESSION['prenom'] = $resultat['prenom'];
-            echo 'Vous êtes connecté !';
+            
             header('location:index.php');
+            die;
+            
+     
         } else {
             echo 'Mauvais identifiant ou mot de passe ! ';
         }
